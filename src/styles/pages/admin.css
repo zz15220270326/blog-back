@@ -1,0 +1,42 @@
+.admin-page {
+  background: #000;
+  color: #666;
+}
+.logo {
+  background: rgba(255, 255, 255, 0.2);
+  height: 32px;
+  margin: 10px;
+}
+
+.article-content {
+  margin: 0 16px;
+}
+
+.ant-layout-slider {
+  background-color: #fff;
+}
+
+.admin-slider, .ant-layout-sider-trigger, .admin-slider .ant-menu {
+  /* black */
+  background-color: rgb(0, 0, 0);
+  /* white */
+  /* background-color: #fff; */
+}
+/* .ant-menu-item {
+  background-color: rgb(216, 86, 186);
+} */
+/* .admin-layout {
+  color: #000;
+  background-color: #00ff;
+} */
+/* .admin-slider .ant-menu {
+  background-color: #000;
+}
+
+.ant-layout-sider-trigger {
+  background-color: #000;
+} */
+
+/* .ant-menu-item-selected {
+  background-color: #888;
+} */

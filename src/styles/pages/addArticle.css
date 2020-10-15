@@ -1,0 +1,72 @@
+.add-article-page {
+  margin-top: 0.3rem;
+}
+
+.search-input {
+  margin-bottom: 0.8rem;
+}
+
+.html-content {
+  background-color: #f6f6f6;
+}
+
+.show-html {
+  background-color: #dedede;
+}
+
+.other-content {
+  padding: 1.2rem 0;
+}
+
+.save-button {
+  margin: 0 1.3rem;
+}
+
+.introduce-content {
+  margin-left: 0.8rem;
+}
+
+.introduce-html{
+  padding:10px;
+  border:1px solid #ddd;
+  border-radius: 5px;
+  font-size:16px;
+
+  background-color: #f0f0f0;
+}
+
+
+.introduce-html h1{
+  font-size:30px;
+}
+
+.introduce-html h2{
+  font-size:28px;
+  border-bottom: 1px solid #cbcbcb;
+}
+.introduce-html h3{
+  font-size:24px;
+}
+
+.introduce-html pre{
+  display: block;
+  background-color: #f0f0f0;
+  padding: 5px;
+  border-radius: 5px;
+}
+.introduce-html pre>code{
+  color: #000;
+  background-color: #f0f0f0;
+}
+.introduce-html code {
+  background-color: #fff5f5;
+  padding: 5px 10px;
+  border-radius: 5px;
+  margin: 0px 3px; 
+  color: #ff502c; 
+}
+
+.date-select {
+  margin-top: 1.5rem;
+  margin-left: 1.2rem;
+}
