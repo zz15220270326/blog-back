@@ -7,7 +7,7 @@ import { getAxios } from '../../request'
 import { Row, Col, Input, Select, Button, DatePicker, message } from 'antd'
 // ts-rules
 import { Props } from '../../ts-rules/public/'
-import { InputEvent, TypeInfo, TypeInfoChild } from '../../ts-rules/pages/AddArticle'
+import { InputEvent, TypeInfo, TypeInfoChild, Article } from '../../ts-rules/pages/AddArticle'
 
 const { Option } = Select
 const { TextArea } = Input
@@ -72,7 +72,7 @@ export default function AddArticle(props: Props) {
   function changeTitle(e: InputEvent) {
     setArticleTitle(e.target.value)
   }
-  function saveArticle() {
+  async function saveArticle() {
     if (selectedType === '默认内容') {
       message.error('你还没有选择类型...')
     } else if (!showDate) {
@@ -83,9 +83,19 @@ export default function AddArticle(props: Props) {
       message.error('文章内容不能为空...')
     } else if (!articleIntroduce) {
       message.error('简介也不能为空...')
-    } else {
-      message.success('保存成功! ')
     }
+    //把字符串转换成时间戳
+    // let datetext= showDate.replace('-','/') 
+    // showDate: (new Date(datetext ).getTime())/1000,
+    const tmpArticle: Article = {
+      selectedType,
+      showDate,
+      articleTitle,
+      articleContent,
+      articleIntroduce
+    }
+    message.success('保存成功')
+    // 自动生成 id 和 view_count, 并post到中台
   }
   return (
     <div className="add-article-page">

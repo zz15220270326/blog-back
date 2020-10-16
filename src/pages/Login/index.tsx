@@ -45,6 +45,8 @@ export default function Login(props: Props) {
       console.log('把openId写进缓存中。。。');
       localStorage.setItem('openId', openId.toString())
       message.success(status)
+      setUserName('')
+      setPassword('')
       props.history.push('/index')
     } else {
       // login-fail

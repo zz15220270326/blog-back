@@ -15,3 +15,11 @@ export interface TypeInfoChild {
   typeName: string
   orderNumber: string
 }
+
+export interface Article {
+  selectedType: string
+  showDate?: string
+  articleTitle: string
+  articleContent: string
+  articleIntroduce?: string
+}
