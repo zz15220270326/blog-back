@@ -4,8 +4,8 @@ import { Card, Input, Button, Spin, message } from 'antd'
 import { UserOutlined, KeyOutlined } from '@ant-design/icons'
 import { postAxios } from '../../request'
 // rules
-import { Props } from '../../ts-rules/public'
-import { Event, LoginUrl, LoginInfo, LoginReturn } from '../../ts-rules/pages/Login'
+import { Props } from '@/ts-rules/public'
+import { Event, LoginUrl, LoginInfo, LoginReturn } from '@/ts-rules/pages/Login'
 
 export default function Login(props: Props) {
   // state: userName, password, inLoading
@@ -40,14 +40,12 @@ export default function Login(props: Props) {
     // 获取后台返回的登录状态、openId(用于本地缓存)
     const status = await result.data
     const { openId } = result
-    console.log(status);
+    // console.log('openId', openId, typeof (openId))
     if (status === '登录成功!') {
       console.log('把openId写进缓存中。。。');
       localStorage.setItem('openId', openId.toString())
       message.success(status)
-      setTimeout(() => {
-        props.history.push('/index')
-      }, 500)
+      props.history.push('/index')
     } else {
       // login-fail
       message.error('用户名账号或密码错误!')

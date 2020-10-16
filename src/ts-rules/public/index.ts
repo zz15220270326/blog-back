@@ -1,3 +1,7 @@
 export interface Props {
-  [propKey: string]: any
+  history: {
+    push: any
+    [otherHistoryKey: string]: any
+  }
+  [otherKey: string]: any
 }

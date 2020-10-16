@@ -1,5 +1,6 @@
 import React from 'react'
-import { BrowserRouter as Router, Route, Redirect } from 'react-router-dom'
+import { BrowserRouter as Router, Route } from 'react-router-dom'
+// import {Redirect} from 'react-router-dom'
 // child-component-router-settings
 import Login from '../Login'
 import Register from '../Register'

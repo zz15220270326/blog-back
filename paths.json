@@ -1,0 +1,25 @@
+{
+  "compilerOptions": {
+    "baseUrl": ".",
+    "paths": {
+      "@/*": [
+        "src/*"
+      ],
+      "@pages/*": [
+        "src/pages/*"
+      ],
+      "@components/*": [
+        "src/components/*"
+      ],
+      "@request/*": [
+        "src/request/*"
+      ],
+      "@ts-rules/*": [
+        "src/ts-rules/*"
+      ],
+      "@styles/*": [
+        "src/styles/*"
+      ]
+    }
+  }
+}
