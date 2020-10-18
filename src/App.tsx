@@ -2,12 +2,12 @@ import React from 'react'
 import './styles/App.css'
 
 // main.tsx: router
-import Main from './pages/Main'
+import MainRouter from './pages/MainRouter'
 
 function App() {
   return (
     <div className="App">
-      <Main />
+      <MainRouter />
     </div>
   );
 }

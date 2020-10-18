@@ -12,7 +12,7 @@ export default function Login(props: Props) {
   const [userName, setUserName] = useState('')
   const [password, setPassword] = useState('')
   const [inLoading, setInLoading] = useState(false)
-  // methods
+  // methods 
   function getUserName(e: Event) {
     let { value } = e.target
     setUserName(value)
@@ -39,15 +39,18 @@ export default function Login(props: Props) {
     const result = await postAxios<LoginUrl, LoginInfo, LoginReturn>('checkLogin', loginInfo)
     // 获取后台返回的登录状态、openId(用于本地缓存)
     const status = await result.data
-    const { openId } = result
-    // console.log('openId', openId, typeof (openId))
+    const openId = await result.openId.toString()
     if (status === '登录成功!') {
-      console.log('把openId写进缓存中。。。');
-      localStorage.setItem('openId', openId.toString())
-      message.success(status)
-      setUserName('')
-      setPassword('')
-      props.history.push('/index')
+      if (openId.length !== 0) {
+        console.log('把openId写进缓存中。。。', '  openId: ', openId)
+        await localStorage.setItem('openId', openId)
+        message.success(status)
+        setUserName('')
+        setPassword('')
+        setTimeout(() => {
+          props.history.push('/index')
+        }, 500)
+      }
     } else {
       // login-fail
       message.error('用户名账号或密码错误!')

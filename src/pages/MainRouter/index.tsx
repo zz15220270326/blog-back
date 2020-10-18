@@ -7,17 +7,16 @@ import Register from '../Register'
 import Admin from '../Admin'
 /**
  * main.tsx: 
- *   这个文件中主要放置一些路由相关的配置
+ *   主路由配置
 */
 
-export default function Main() {
+export default function MainRouter() {
   return (
     <>
       <Router>
         <Route path="/login/" exact component={Login} />
         <Route path="/register/" component={Register} />
         <Route path="/index/" component={Admin} />
-        {/* <Redirect from="/" exact to="/login/" /> */}
       </Router>
     </>
   )

@@ -5,3 +5,8 @@ export interface Props {
   }
   [otherKey: string]: any
 }
+
+export interface HandleEvent {
+  key: string | number
+  [otherKeys: string]: any
+}

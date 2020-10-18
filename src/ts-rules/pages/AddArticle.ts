@@ -17,9 +17,21 @@ export interface TypeInfoChild {
 }
 
 export interface Article {
-  selectedType: string
-  showDate?: string
-  articleTitle: string
-  articleContent: string
-  articleIntroduce?: string
+  id?: string | number
+  type_id: string | number
+  add_time?: string
+  title: string
+  article_content: string
+  introduce?: string
+  view_count?: number | string
 }
+
+export interface InsertResult {
+  insertSuccess: boolean
+  insertId?: number | string
+}
+
+export interface GetArticleById {
+  data: [Article]
+}
+

@@ -4,12 +4,13 @@ import axios from 'axios'
 const baseURL = 'http://localhost:7001/admin/'
 // ts-rules
 // export functions
-export function getAxios<T>(url: string) {
+export function getAxios<T>(url: string, params = {}) {
   return new Promise<T>((resolve, reject) => {
     axios.request({
       baseURL,
       url,
       method: 'GET',
+      ...params
     })
       .then(result => {
         resolve(result.data)
@@ -27,7 +28,8 @@ export function postAxios<T, S, R>(url: T, params: S) {
       url: baseURL + url,
       method: 'POST',
       withCredentials: true,
-      data: params
+      data: params,
+      headers: { 'Access-Control-Allow-Origin': '*' }
     })
       .then(result => {
         resolve(result.data)
